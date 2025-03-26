@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Chat App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="settings-panel" id="settingsPanel">
+        <h3><i class="fas fa-cog"></i> Settings</h3>
+        <div class="setting-item">
+            <label>Theme:</label>
+            <select id="themeSelect" onchange="changeTheme(this.value)">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="blue">Ocean</option>
+                <option value="professional">Professional</option>
+            </select>
+        </div>
+        <div class="setting-item">
+            <label>Custom Background:</label>
+            <input type="color" id="bgColorPicker" onchange="changeCustomBackground(this.value)">
+        </div>
+        <div class="setting-item">
+            <button onclick="resetSettings()">Reset to Default</button>
+        </div>
+    </div>
+
+    <div class="fab" onclick="toggleSettings()">
+        <i class="fas fa-cog"></i>
+    </div>
+
+    <div class="container">
+        <div class="chat-list" id="chatList"></div>
+        <div class="chat-details">
+            <div class="chat-header" id="chatHeader"></div>
+            <div class="messages-container" id="messagesContainer"></div>
+            <div class="input-container">
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
